@@ -1,0 +1,13 @@
+body {
+  font-family: 'Tajawal', Arial, Helvetica, sans-serif;
+}
+
+table, tr, td, th {
+  white-space: nowrap;
+}
+
+.dt-table th.dt-sorter::before {
+  border-top: 4px solid #000;
+  top: 18px;
+  margin: 2px 0;
+}
