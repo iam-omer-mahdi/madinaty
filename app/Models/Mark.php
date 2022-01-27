@@ -13,4 +13,14 @@ class Mark extends Model
         'subject_id',
         'mark',
     ];
+
+    public function result()
+    {
+        return $this->belongsTo(Result::class);
+    }
+    
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
 }

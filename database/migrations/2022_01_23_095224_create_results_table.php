@@ -15,10 +15,9 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
-            $table->double('total_result');
-            $table->foreignId('grade_id');
-            $table->foreignId('exam_id');
-            $table->foreignId('student_id');
+            $table->foreignId('grade_id')->constrained()->onDelete('cascade');
+            $table->foreignId('exam_id')->constrained()->onDelete('cascade');
+            $table->foreignId('student_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

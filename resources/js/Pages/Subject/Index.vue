@@ -2,7 +2,7 @@
   <authenticated-layout>
     <section class="py-5 mt-5">
       <div class="container">
-        <Link class="btn btn-success" href="/dashboard/subjects/create">اضافة مادة</Link>
+        <Link class="btn btn-success" :href="route('subjects.create')">اضافة مادة</Link>
 
         <input
           type="text"
@@ -31,6 +31,7 @@
               <tr>
                 <th>الصف</th>
                 <th>المادة</th>
+                <th>الدرجة الكاملة</th>
                 <th></th>
               </tr>
             </thead>
@@ -45,10 +46,11 @@
               <tr v-for="subject in subjects" :key="subject.id">
                 <td>{{ subject.grade.name }}</td>
                 <td>{{ subject.name }}</td>
+                <td>{{ subject.mark }}</td>
                 <td class="d-flex gap-2 justify-content-center">
                   <Link
                     class="btn btn-sm btn-warning"
-                    :href="`/dashboard/subjects/${subject.id}/edit`"
+                    :href="route('subjects.edit', subject.id)"
                     >تعديل</Link
                   >
                   <Link
@@ -94,19 +96,19 @@ export default {
   },
   watch: {
     search: debounce(function (newSearch, oldSearch) {
-      this.$inertia.get('/dashboard/subjects', {'search': newSearch}, {preserveState: true, replace: true})
+      this.$inertia.get(route('subjects.index'), {'search': newSearch}, {preserveState: true, replace: true})
     }, 500),
     filter: debounce(function (value) {
-      this.$inertia.get('/dashboard/subjects', {'filter': value}, {preserveState: true, replace: true})
+      this.$inertia.get(route('subjects.index'), {'filter': value}, {preserveState: true, replace: true})
     }, 300)
   },
   methods: {
     filterSchools () {
-      this.$inertia.get('/dashboard/subjects')
+      this.$inertia.get(route('subjects.index'))
     },
     destroy(id) {
-      if (confirm('هل انت متأكد ؟')) {
-        this.$inertia.delete(`/dashboard/subjects/${id}`)
+      if (confirm("هل انت متأكد ؟ سوف يتم حذف جميع البيانات المتعلقة بهذا العنصر")) {
+        this.$inertia.delete(route('subjects.destroy',id))
       }
     }
   }

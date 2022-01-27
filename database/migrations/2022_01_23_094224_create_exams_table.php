@@ -17,7 +17,7 @@ class CreateExamsTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('exam_date');
-            $table->foreignId('grade_id');
+            $table->foreignId('grade_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

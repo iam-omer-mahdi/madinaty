@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grade;
+use App\Models\School;
 use App\Models\Classes;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -18,14 +19,23 @@ class ClassController extends Controller
     public function index(Request $request)
     {
         $classes = Classes::query()
-            ->with('grade')
+            ->with('grade.school')
             ->orderBy('grade_id')
             ->when($request->input('search'), function ($query, $search) {
                 $query->where('name', 'like', "%{$search}%");
             })
             ->get();
 
-        return inertia('Classes/Index')->with(['classes' => $classes, 'filters' => $request->only('search')]);
+        $schools = School::all();
+        $grades = Grade::all();
+        // $school_filter = $request->input('school_filter');
+        
+        if ($request->input('grade_filter')) {
+            $classes = Classes::where('grade_id', '=', $request->input('grade_filter'))->with('grade.school')
+            ->orderBy('grade_id')->get();
+        }
+
+        return inertia('Classes/Index')->with(['schools' => $schools,'grades' => $grades, 'classes' => $classes, 'filters' => $request->only('search')]);
     }
 
     /**

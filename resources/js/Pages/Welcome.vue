@@ -6,8 +6,8 @@
             <div class="overlay"></div>
             <div class="container d-flex flex-column align-items-start justify-content-center min-vh-100">
                 <h1 class="display-2 fw-bold mb-4">نسعي نحو التميز</h1>
-                <h4 class="display-6 col-md-6">نسعي دوما لخلق بيئة مدرسية تساعد الطلاب علي الا بداع و التميز</h4>
-                <Link href="/#contact" class="btn btn-success px-5 py-2 mt-3">تواصل معنا</Link>
+                <h4 class="display-6 col-md-6">نسعي دوما لخلق بيئة مدرسية تساعد التلاميذ علي الا بداع و التميز</h4>
+                <Link :href="`${route('home')}/#contact`" class="btn btn-success px-5 py-2 mt-3">تواصل معنا</Link>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,202.7C384,235,480,277,576,261.3C672,245,768,171,864,154.7C960,139,1056,181,1152,176C1248,171,1344,117,1392,90.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </section>
@@ -145,11 +145,11 @@
                                 <span>0924008888</span>    
                             </li>    
                             <li class="nav-item border-top border-3 border-success p-2 d-grid w-100 bg-white text-dark rounded-bottom">
-                                <strong>مدير البنات: </strong>
+                                <strong>مدير مدرسة البنات: </strong>
                                 <span>0925118815</span>    
                             </li>    
                             <li class="nav-item border-top border-3 border-success p-2 d-grid w-100 bg-white text-dark rounded-bottom">
-                                <strong>مدير الاولاد: </strong>
+                                <strong>مدير مدرسة الاولاد: </strong>
                                 <span>0925118816</span>    
                             </li>    
                             <li class="nav-item border-top border-3 border-success p-2 d-grid w-100 bg-white text-dark rounded-bottom">
@@ -157,7 +157,7 @@
                                 <span>09100003446</span>    
                             </li>    
                             <li class="nav-item border-top border-3 border-success p-2 d-grid w-100 bg-white text-dark rounded-bottom">
-                                <strong>شؤون البنات: </strong>
+                                <strong>شؤون الطالبات: </strong>
                                 <span>09100003445</span>    
                             </li>    
                         </ul>                
@@ -182,6 +182,9 @@ section#calendar {
     background-color: transparent;
 }
 
+.hero {
+    background: url('../images/hero.jpeg');
+}
 .overlay {
     position: absolute;
     content: '';
@@ -196,7 +199,6 @@ section#calendar {
 
 .hero {
     position: relative;
-    background: url('../images/hero.jpeg');
     background-position: 50% 10% 0%;
 }
 .hero .container {

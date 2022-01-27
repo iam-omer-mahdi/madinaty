@@ -22,7 +22,7 @@
               </small>
             </div>
             <div class="mb-4">
-              <label for="mark" class="form-label">العلامة الكاملة</label>
+              <label for="mark" class="form-label">الدرجة الكاملة</label>
               <input type="number" name="mark" id="mark" class="form-control" v-model="form.mark" required>
               <small class="text-danger mt-1 d-inline-block" v-if="errors.mark">
                 {{ errors.mark }}

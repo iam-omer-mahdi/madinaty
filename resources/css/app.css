@@ -11,3 +11,12 @@ table, tr, td, th {
   top: 18px;
   margin: 2px 0;
 }
+
+table {
+  font-size: 14px;
+}
+@media print {
+  .no-print,.navbar,.form-control,.form-select,.form-label,.btn {
+    display: none;
+  }
+}

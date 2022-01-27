@@ -2,7 +2,7 @@
 
     <nav class="navbar navbar-expand-md navbar-light bg-white border-success shadow-sm">
         <div class="container">
-            <Link class="navbar-brand fw-bold" href="/dashboard">مدارس <span class="text-success">مدينتي</span></Link>
+            <Link class="navbar-brand fw-bold" :href="route('dashboard')">مدارس <span class="text-success">مدينتي</span></Link>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -10,28 +10,25 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav mt-2 mt-lg-0 w-100">
                     <li class="nav-item ms-md-auto">
-                        <Link class="nav-link" href="/dashboard/students">الطلاب</Link>
+                        <Link class="nav-link" :href="route('schools.index')">المدارس</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class="nav-link" href="/dashboard/accounting">الحسابات</Link>
+                        <Link class="nav-link" :href="route('grades.index')">الصفوف</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class="nav-link" href="/dashboard/schools">المدارس</Link>
+                        <Link class="nav-link" :href="route('classes.index')">الفصول</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class="nav-link" href="/dashboard/grades">الصفوف</Link>
+                        <Link class="nav-link" :href="route('students.index')">الطلاب</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class="nav-link" href="/dashboard/classes">الفصول</Link>
+                        <Link class="nav-link" :href="route('subjects.index')">المواد</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class="nav-link" href="/dashboard/subjects">المواد</Link>
+                        <Link class="nav-link" :href="route('exams.index')">الامتحانات</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class="nav-link" href="/dashboard/exams">الامتحانات</Link>
-                    </li>
-                    <li class="nav-item">
-                        <Link class="nav-link" href="/dashboard/results">النتائج</Link>
+                        <Link class="nav-link" :href="route('results.index')">النتائج</Link>
                     </li>
                     <li class="nav-item ms-md-auto">
                         <Link :href="route('logout')" method="post" class="btn btn-danger" as="button">تسجيل الخروج</Link>
@@ -68,7 +65,6 @@ export default {
         Link,
         FlashMessages,
     },
-
     data() {
         return {
             showingNavigationDropdown: false,

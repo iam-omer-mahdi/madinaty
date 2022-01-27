@@ -122,10 +122,10 @@ export default {
   },
   methods: {
     filterSchool() {
-      this.$inertia.get('/dashboard/students/'+ this.student.id +'/edit', {'grade_filter': this.form.grade_id, 'school_filter': this.form.school_id}, {preserveState: true, replace: true})
+      this.$inertia.get(route('students.edit', this.student.id), {'grade_filter': this.form.grade_id, 'school_filter': this.form.school_id}, {preserveState: true, replace: true})
     },
     filterGrade() {
-      this.$inertia.get('/dashboard/students/'+ this.student.id +'/edit', {'class_filter': this.form.grade_id,'grade_filter': this.form.grade_id, 'school_filter': this.form.school_id}, {preserveState: true, replace: true})
+      this.$inertia.get(route('students.edit', this.student.id), {'class_filter': this.form.grade_id,'grade_filter': this.form.grade_id, 'school_filter': this.form.school_id}, {preserveState: true, replace: true})
     },
     submit() {
       this.form.put(this.route('students.update', this.student.id), {

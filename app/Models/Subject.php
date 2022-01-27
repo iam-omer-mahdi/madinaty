@@ -18,4 +18,9 @@ class Subject extends Model
     {
         return $this->belongsTo(Grade::class);
     }
+    
+    public function mark()
+    {
+        return $this->hasMany(Mark::class);
+    }
 }

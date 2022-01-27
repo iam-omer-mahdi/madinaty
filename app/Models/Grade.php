@@ -17,24 +17,24 @@ class Grade extends Model
     {
         return $this->belongsTo(School::class);
     }
-    
     public function classes()
     {
         return $this->hasMany(Classes::class);
     }
-    
-    public function subjects()
+    public function subject()
     {
         return $this->hasMany(Subject::class);
     }
-
     public function students()
     {
         return $this->hasMany(Student::class);
     }
-
     public function exam()
     {
         return $this->hasMany(Exam::class);
+    }
+    public function result()
+    {
+        return $this->hasMany(Result::class);
     }
 }

@@ -113,10 +113,10 @@ export default {
   },
   watch: {
     'form.school_id': function (value) {
-      this.$inertia.get('/dashboard/students/create', {'grade_filter': value, 'school_filter': this.form.school_id}, {preserveState: true, replace: true})
+      this.$inertia.get(route('students.create'), {'grade_filter': value, 'school_filter': this.form.school_id}, {preserveState: true, replace: true})
     },
     'form.grade_id': function (value) {
-      this.$inertia.get('/dashboard/students/create', {'class_filter': value,'grade_filter': this.form.grade_id, 'school_filter': this.form.school_id}, {preserveState: true, replace: true})
+      this.$inertia.get(route('students.create'), {'class_filter': value,'grade_filter': this.form.grade_id, 'school_filter': this.form.school_id}, {preserveState: true, replace: true})
     }
   },
   methods: {
